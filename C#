@@ -1,0 +1,26 @@
+7th Kyu
+
+Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+using System;
+using System.Collections.Generic;
+
+public class SplitString
+{
+    public static string[] Solution(string str)
+    {
+        List<string> result = new List<string>();
+
+        for (int i = 0; i < str.Length; i += 2)
+        {
+            if (i + 1 < str.Length)
+                result.Add(str.Substring(i, 2));
+            else
+                result.Add(str[i] + "_");
+        }
+
+        return result.ToArray();
+    }
+}
+
+
